@@ -1,0 +1,33 @@
+<form class="form py-4 needs-validation h-adr" method="post" th:action="@{/add/}" th:object="${gakuseihyou}">
+			
+			<div class="row g-3">
+              <label for="ENT_YEAR" class="form-label">入学年度</label>
+              <div class="col-4">
+                <input type="text" class="form-control" id="ENT_YEAR" name="ENT_YEAR" th:field="*{ENT_YEAR}" th:classappend="${#fields.hasErrors('ENT_YEAR')} ? 'is-invalid' : 'is-valid'" />
+              </div>
+            </div>
+ 
+			<div class="row g-3">
+              <label for="NO" class="form-label">学生番号</label>
+              <div class="col-4">
+                <input type="text" class="form-control" id="NO" name="NO" th:field="*{NO}" th:classappend="${#fields.hasErrors('NO')} ? 'is-invalid' : 'is-valid'" />
+              </div>
+            </div>
+            
+            <div class="row g-3">
+              <label for="NAME" class="form-label">氏名</label>
+              <div class="col-4">
+                <input type="text" class="form-control" id="NAME" name="NAME" th:field="*{NAME}" th:classappend="${#fields.hasErrors('NAME')} ? 'is-invalid' : 'is-valid'" />
+              </div>
+            </div>
+            
+     		<div class="row g-3">
+              <label for="CLASS_NUM" class="form-label">クラス</label>
+              <div class="col-4">
+                <input type="text" class="form-control" id="CLASS_NUM" name="CLASS_NUM" th:field="*{CLASS_NUM}" th:classappend="${#fields.hasErrors('CLASS_NUM')} ? 'is-invalid' : 'is-valid'" />
+              </div>
+            </div>
+			
+          <hr class="my-4">
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
+        </form>

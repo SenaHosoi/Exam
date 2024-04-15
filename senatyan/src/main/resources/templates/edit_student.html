@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>学生情報編集</title>
+</head>
+<body>
+    <h1>Edit Student</h1>
+    <form th:object="${student}" th:action="@{/studentlist/update/{id}(id=${student.id})}" method="post">
+        <input type="hidden" th:field="*{id}"/>
+        <label>入学年度:</label>
+        <select th:field="*{ENT_YEAR}">
+            <option th:each="year : ${ENT_YEAR}" th:value="${ENT_YEAR}" th:text="${ENT_YEAR}" th:selected="${ENT_YEAR == student.entYear}"></option>
+        </select><br/>
+        <label>学生番号:</label>
+        <input type="text" th:field="*{NO}"/><br/>
+        <label>学生名:</label>
+        <input type="text" th:field="*{NAME}"/><br/>
+        <label>クラス番号:</label>
+        <select th:field="*{CLASS_NUM}">
+            <option th:each="classNum : ${CLASS_NUM}" th:value="${CLASS_NUM}" th:text="${CLASS_NUM}" th:selected="${CLASS_NUM == student.classNum}"></option>
+        </select><br/>
+        <button type="submit">更新する</button>
+    </form>
+</body>
+</html>
